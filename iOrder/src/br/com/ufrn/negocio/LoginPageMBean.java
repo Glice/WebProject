@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedBean;
 public class LoginPageMBean {
 
 	private String login;
-	private String INDEX_PAGE = "Index";
+	private String INDEX_PAGE = "../../Index.xhtml";
 
 	public LoginPageMBean() {
 		
