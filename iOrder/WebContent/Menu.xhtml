@@ -3,20 +3,22 @@
 
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+		<title>As Regiões do Brasil</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
 
+		<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css"/>
 
-		<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+		<link rel="stylesheet" type="text/css" href="css/w3.css"/>
 
-		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-		<link rel="stylesheet" type="text/css" href="css/w3.css">
 		<title>iOrder - Menu</title>
 		
 		<script type="text/javascript" src="js/scripts.js">
 		</script>
 	</head>
+		
 
-<body>
 	<header>
 		<div class="container">
 			<div class="row">
@@ -43,8 +45,8 @@
 		    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 		    	  	<ul class="nav navbar-nav">
 		    	    	<li><a href="index.html">Início</a></li>
-		    	    	<li><a href="Menu.xhtml">Cardápio</a></li>
-		    	    	<li><a href="Conta.xhtml">Conta<span class="sr-only">(current)</span></a></li>
+		    	    	<li><a href="Menu.xhtml">Cardápio<span class="sr-only">(current)</span></a></li>
+		    	    	<li><a href="Conta.xhtml">Conta</a></li>
 		    	  	</ul>
 		    	  
 		    	  	<!--barra de pesquisa-->
@@ -69,9 +71,41 @@
 
 	<section class="body">
 		<div>
-			<h2>Minha conta</h2>
+			<h2>Menu</h2>
 		</div>
+		
+		<div>
+			<form name="cadastro">
+				Itens:</br>
+				
+				<br></br>
+				<p>Melhor dia da semana para estudar <strong>Desenvolvimento Web II</strong></p>
+				<input type="checkbox" name="item" id="2" value="1"/>1</br>
+				<input type="checkbox" name="item" id="3" value="2"/>2</br>
+				<input type="checkbox" name="item" id="4" value="3"/>3</br>
+				<input type="checkbox" name="item" id="5" value="4"/>4</br>
+				<input type="checkbox" name="item" id="6" value="5"/>5</br>
+
+				<br></br>
+				<input type="button" name="btnCadastrar" value="Cadastrar" onclick="criarPedido()"/>
+			</form>
+		</div>
+		
+		
+		<div>
+			<table border="1" id="tabela">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Quantidade</th>
+						<th>Valor</th>
+					</tr>
+				</thead>
+
+				<tbody>
+				</tbody>
+		</div>
+
 	</section>
-	
 </body>
 </html>
