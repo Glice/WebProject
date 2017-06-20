@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>Pedido</h:head> 
+<body> 
+	<h:form>
+	<h:panelGrid border="1" columns="2">
+			<h:outputText value="Item 1"></h:outputText>
+			<h:inputText value="#{cadastroPedidoMBean.pedido}" />
+			<h:outputText value="Item 2"></h:outputText>
+			<h:inputText value="#{cadastroPedidoMBean.pedido.itens}"/>
+		</h:panelGrid>
+			<h:commandButton value="Soma" action="#{cadastroPedidoMBean.addItem}"/>
+	</h:form>
+</body> 
+</html>
