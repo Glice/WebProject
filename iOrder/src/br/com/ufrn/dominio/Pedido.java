@@ -33,6 +33,12 @@ public class Pedido implements Serializable {
 		this.cliente.setNome("Cliente não identificado");
 		this.mesa = mesa;
 	}
+	
+	public Pedido() {
+		this.cliente = new Cliente();
+		this.cliente.setNome("Cliente não identificado");
+		//this.mesa = mesa;
+	}
 
 	public double totalPedido() {
 		for (ItemDeCardapio item : itens) {

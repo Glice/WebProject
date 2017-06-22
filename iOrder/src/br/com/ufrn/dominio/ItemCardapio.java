@@ -15,10 +15,20 @@ import javax.persistence.Table;
 public class ItemCardapio implements Serializable {
 
 	@Id
-	@SequenceGenerator(name="SEQ_USUARIO", initialValue=1,
-	allocationSize=1, sequenceName="seq_usuario")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_USUARIO")
+	@SequenceGenerator(name="SEQ_ITEM_CARDAPIO", initialValue=1,
+	allocationSize=1, sequenceName="seq_item_cardapio")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ITEM_CARDAPIO")
 	@Column(name="id_Usuario")
 	private int id;
+	
+	private double valor;
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
 
 }
