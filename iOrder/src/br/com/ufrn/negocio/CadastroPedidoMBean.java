@@ -2,6 +2,7 @@ package br.com.ufrn.negocio;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.ufrn.dao.GenericDAO;
@@ -34,46 +35,15 @@ public class CadastroPedidoMBean {
 	
 	public String addNewItem() {
 		dao.addNew(item);
-		itemList = dao.findEmployees();
+		//itemList = dao.findEmployees();
 		return "employeelist";
 	}
 	
-	public void addItem(ItemDeCardapio item) {
-		pedido.getItens().add(item);
+	public void addItem(ItemCardapio item) {
+		pedido.addItem(item);
 	}
 	
-	public void removeItem(ItemDeCardapio item) {
-		pedido.getItens().remove(item);
+	public void removeItem(ItemCardapio item) {
+		pedido.removeItem(item);
 	}
 }
-
-@Named(value = "employeeController")
-@RequestScoped
-public class EmployeeMB {
-	@Inject EmployeeDAO dao;
-	
-	//Auxiliary fields for JSF
-	private List<Employee> employeeList = new ArrayList<>();
-	private Employee employee = new Employee();
-	
-	public List<Employee> getEmployeeList() {
-		return employeeList;
-	}
-
-	public void setEmployeeList(List<Employee> employeeList) {
-		this.employeeList = employeeList;
-	}
-
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
-
-	public String addNewEmployee() {
-		dao.addNew(employee);
-		employeeList = dao.findEmployees();
-		return "employeelist";
-	}
