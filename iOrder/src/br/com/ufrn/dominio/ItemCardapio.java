@@ -18,10 +18,26 @@ public class ItemCardapio implements Serializable {
 	@SequenceGenerator(name="SEQ_ITEM_CARDAPIO", initialValue=1,
 	allocationSize=1, sequenceName="seq_item_cardapio")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ITEM_CARDAPIO")
-	@Column(name="id_Usuario")
+	@Column(name="id_Item_cardapio")
 	private int id;
-	
+	private String nome;
 	private double valor;
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 	public double getValor() {
 		return valor;

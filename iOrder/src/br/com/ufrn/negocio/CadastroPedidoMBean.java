@@ -7,11 +7,10 @@ import javax.inject.Named;
 
 import br.com.ufrn.dao.GenericDAO;
 import br.com.ufrn.dominio.ItemCardapio;
-import br.com.ufrn.dominio.ItemDeCardapio;
 import br.com.ufrn.dominio.Pedido;
 
 
-@Named(value = "orderController")
+@ManagedBean(name = "orderController")
 @RequestScoped
 public class CadastroPedidoMBean {
 	
@@ -20,6 +19,14 @@ public class CadastroPedidoMBean {
 	private Pedido pedido;
 	private ItemCardapio item;
 		
+
+	public ItemCardapio getItem() {
+		return item;
+	}
+
+	public void setItem(ItemCardapio item) {
+		this.item = item;
+	}
 
 	public CadastroPedidoMBean() {
 		this.pedido = new Pedido();
@@ -36,7 +43,7 @@ public class CadastroPedidoMBean {
 	public String addNewItem() {
 		dao.addNew(item);
 		//itemList = dao.findEmployees();
-		return "employeelist";
+		return "itens";
 	}
 	
 	public void addItem(ItemCardapio item) {
