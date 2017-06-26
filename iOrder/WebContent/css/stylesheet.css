@@ -1,6 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Indie+Flower";
 
-/* TÃ­tulo em fonte importada azul escura em negrito*/ 
+/* Título em fonte importada azul escura em negrito*/ 
 .title {
 	font-family: "Indie Flower", Arial;
 	font-weight: 600;
@@ -16,6 +16,8 @@
 
 .center {
 	text-align:center;
+	align-self: center;
+	margin: auto;
 }
 
 header {

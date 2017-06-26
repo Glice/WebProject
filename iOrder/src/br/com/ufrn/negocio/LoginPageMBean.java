@@ -2,11 +2,11 @@ package br.com.ufrn.negocio;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean
+@ManagedBean(name = "loginPageMBean")
 public class LoginPageMBean {
 
 	private String login;
-	private String INDEX_PAGE = "../../Index.xhtml";
+	private String INDEX_PAGE = "Index.xhtml";
 
 	public LoginPageMBean() {
 		

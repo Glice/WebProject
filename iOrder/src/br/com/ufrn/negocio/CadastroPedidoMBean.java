@@ -1,5 +1,8 @@
 package br.com.ufrn.negocio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
@@ -16,9 +19,16 @@ public class CadastroPedidoMBean {
 	
 	@Inject GenericDAO dao;
 	
-	private Pedido pedido;
-	private ItemCardapio item;
+	private Pedido pedido = new Pedido();
+	private ItemCardapio item = new ItemCardapio();
+	private List<ItemCardapio> itemList = new ArrayList<>();
 		
+
+	public CadastroPedidoMBean() {
+		
+		this.item.setId(1);
+		this.item.setNome("item teste");
+	}
 
 	public ItemCardapio getItem() {
 		return item;
@@ -28,10 +38,6 @@ public class CadastroPedidoMBean {
 		this.item = item;
 	}
 
-	public CadastroPedidoMBean() {
-		this.pedido = new Pedido();
-	}
-	
 	public Pedido getPedido() {
 		return pedido;
 	}

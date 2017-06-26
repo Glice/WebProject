@@ -5,7 +5,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
-	<meta charset="utf-8"></meta>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 	
 	<!--BOOTSTRAP: scripts e estilos-->
@@ -17,10 +18,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	
-	<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css"/>
 
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css"></link>
-	<link rel="stylesheet" type="text/css" href="css/w3.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+	<link rel="stylesheet" type="text/css" href="css/w3.css"/>
 
 	<title>iOrder</title>
 	
@@ -30,7 +31,7 @@
 
 </head>
 
-<body>
+<h:body>
 
 		<!-- Barra de navegacao -->
 		<nav class="navbar navbar-inverse">
@@ -42,12 +43,12 @@
 		   	     		<span class="icon-bar"></span>
 		   	     		<span class="icon-bar"></span>
 		   	   		</button>
-		   	   		<a class="navbar-brand" href="index.html">iOrder</a>
+		   	   		<a class="navbar-brand" href="Index.xhtml">iOrder</a>
 		   	 	</div>
 
 		    	<div class="collapse navbar-collapse" role="navigation" id="bs-example-navbar-collapse-2" aria-expanded="true">
 		    	  	<ul class="nav navbar-nav">
-		    	    	<li class="active"><a href="index.html">Início<span class="sr-only">(current)</span></a></li>
+		    	    	<li class="active"><a href="Index.xhtml">Início<span class="sr-only">(current)</span></a></li>
 		    	    	<li><a href="Menu.xhtml">Cardápio</a></li>
 		    	    	<li><a href="Conta.xhtml">Conta</a></li>
 		    	  	</ul>
@@ -65,55 +66,63 @@
 		     		 </form>
 
 		    	  	<ul class="nav navbar-nav navbar-right">
-		    	  		<li><a href="Conta.html"><span class="glyphicon glyphicon-user"></span>Conta</a></li>
+		    	  		<li><a href="Conta.xhtml"><span class="glyphicon glyphicon-user"></span>Conta</a></li>
 		    	  	</ul>
 		    	</div>
 		  	</div>
 		</nav>
 		<!-- END MENU -->
 
-		<br></br>
-    	<section class="opcoes">
+	<br/>
+	<section class="body">
+    <section class="opcoes">
     	<!--Opções-->
 		<h2>Opções</h2>		    	
     	<div class="container-fluid">
-			    <div class="row">
+			    <div class="col-xs-6 col-sm-6 col-md-5 col-lg-2 block">
 			        <figure>
-			        	<img src="imgs/menu-icon.jpg" alt="cardápio" class="option"></img> </figure>
+			        	<img src="imgs/menu-icon.jpg" alt="cardápio" class="option"></img>
+			        	<figcaption>Pedir itens do <strong>Menu</strong></figcaption>
+			        </figure>
+
 				</div>
-				<div class="row">
-			        <figure><img src="imgs/atendente-icon.jpg" alt="atendente" class="option"></img> </figure>
+				<div class="col-xs-6 col-sm-6 col-md-5 col-lg-2 block">
+			        <figure>
+			        	<img src="imgs/atendente-icon.jpg" alt="atendente" class="option"></img>
+			        	<figcaption>Chamar <strong>atendente</strong></figcaption>
+			        </figure>
 				</div>
-				<div class="row">
-			        <figure><img src="imgs/conta-icon.jpg" alt="conta" class="option"></img> </figure>
+				<div class="col-xs-6 col-sm-6 col-md-5 col-lg-2 block">
+			        <figure>
+			        	<img src="imgs/conta-icon.jpg" alt="conta" class="option"></img>
+			        	<figcaption>Ver minha <strong>conta</strong></figcaption>
+			        </figure>
 				</div>
 			</div>
     </section>
+    
     <section class="destaques">
         <!--Destaques-->
 			<h2>Destaques</h2>
-			
-		
-
-		<!-- Slideshow -->
-		<div class="slideshow-container">
-			<div class="mySlides fade box">
-			 	<div class="numbertext">1 / 3</div>
-			 	<img src="imgs/img1.jpg" alt="slide" class="slide-img"></img>
+			<!-- Slideshow -->
+			<div class="slideshow-container">
+				<div class="mySlides fade box">
+				 	<div class="numbertext">1 / 3</div>
+				 	<img src="imgs/img1.jpg" alt="slide" class="slide-img"></img>
+				</div>
+	
+				<div class="mySlides fade box">
+					<div class="numbertext">2 / 3</div>
+					<img src="imgs/img2.jpg" alt="slide" class="slide-img"></img>
+				</div>
+	
+				<div class="mySlides fade box">
+					<div class="numbertext">3 / 3</div>
+					<img src="imgs/img3.jpg" alt="slide" class="slide-img"></img>
+				</div>
 			</div>
 
-			<div class="mySlides fade box">
-				<div class="numbertext">2 / 3</div>
-				<img src="imgs/img2.jpg" alt="slide" class="slide-img"></img>
-			</div>
-
-			<div class="mySlides fade box">
-				<div class="numbertext">3 / 3</div>
-				<img src="imgs/img3.jpg" alt="slide" class="slide-img"></img>
-			</div>
-		</div>
-
-		<br></br>
+		<br/>
 
 		<div class="center">
 			<span class="dot"></span> 
@@ -126,11 +135,12 @@
 		</script>
 
 	</section>
+	</section>
 	<footer class="center">
 		<h3>Informações</h3>
 		<p>iOrder.com.br CPNJ 01.654.289/0001-04</p>
 		<p>Caixa Postal 1524 - Campus Universitário Lagoa Nova, CEP 59078-970 | Natal/RN - Brasil</p>
 	</footer>
-</body>
+</h:body>
 
 </html>
