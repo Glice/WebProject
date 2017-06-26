@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.com.ufrn.dominio.Banco;
+import br.com.ufrn.dominio.ItemCardapio;
 
 public class GenericDAO {
 
@@ -57,5 +58,10 @@ public class GenericDAO {
 	
 	private EntityManager getEntityManager(){
 		return Banco.getInstance();
+	}
+
+	public void addNew(ItemCardapio item) {
+		// TODO Auto-generated method stub
+		
 	}
 }

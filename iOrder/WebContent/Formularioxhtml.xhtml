@@ -5,15 +5,21 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 <h:head>Pedido</h:head> 
-<body> 
+<h:body> 
 	<h:form>
 	<h:panelGrid border="1" columns="2">
 			<h:outputText value="Item 1"></h:outputText>
-			<h:inputText value="#{cadastroPedidoMBean.pedido}" />
+ 
+			<h:inputText value="#{orderController.item.id}" />
 			<h:outputText value="Item 2"></h:outputText>
-			<h:inputText value="#{cadastroPedidoMBean.pedido.itens}"/>
-		</h:panelGrid>
-			<h:commandButton value="Soma" action="#{cadastroPedidoMBean.addItem}"/>
+			<h:inputText value="#{orderController.item.id}"/>
+			
+			
+	</h:panelGrid>
+	<h:selectBooleanCheckbox value="#{orderController.pedido.addItem}">Checkbox Item</h:selectBooleanCheckbox>
+			
+		 <br />
+			<h:commandButton value="Fazer pedido" action="#{orderController.pedido.addItem}"/>
 	</h:form>
-</body> 
+</h:body> 
 </html>

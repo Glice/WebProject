@@ -23,7 +23,7 @@ public class Pedido implements Serializable {
 	@Column(name="id_Pedido")
 	private int id;
 	
-	private List<ItemDeCardapio> itens;
+	private List<ItemCardapio> itens;
 	private double valor;
 	private Cliente cliente;
 	private Mesa mesa;
@@ -33,20 +33,26 @@ public class Pedido implements Serializable {
 		this.cliente.setNome("Cliente não identificado");
 		this.mesa = mesa;
 	}
+	
+	public Pedido() {
+		this.cliente = new Cliente();
+		this.cliente.setNome("Cliente não identificado");
+		//this.mesa = mesa;
+	}
 
 	public double totalPedido() {
-		for (ItemDeCardapio item : itens) {
+		for (ItemCardapio item : itens) {
 			this.valor += item.getValor();
 		}
 		
 		return this.valor;
 	}
 	
-	public List<ItemDeCardapio> getItens() {
+	public List<ItemCardapio> getItens() {
 		return itens;
 	}
 
-	public void setItens(List<ItemDeCardapio> itens) {
+	public void setItens(List<ItemCardapio> itens) {
 		this.itens = itens;
 	}
 
@@ -74,11 +80,11 @@ public class Pedido implements Serializable {
 		this.mesa = mesa;
 	}
 	
-	public void addItem(ItemDeCardapio item) {
+	public void addItem(ItemCardapio item) {
 		this.itens.add(item);
 	}
 	
-	public void removeItem(ItemDeCardapio item) {
+	public void removeItem(ItemCardapio item) {
 		this.itens.remove(item);
 	}
 
