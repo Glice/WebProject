@@ -1,17 +1,35 @@
 package br.com.ufrn.negocio;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
-import br.com.ufrn.dominio.ItemDeCardapio;
+import br.com.ufrn.dao.GenericDAO;
+import br.com.ufrn.dominio.ItemCardapio;
 import br.com.ufrn.dominio.Pedido;
 
-@ManagedBean
+
+@ManagedBean(name = "orderController")
+@RequestScoped
 public class CadastroPedidoMBean {
-	private Pedido pedido;
 	
+	@Inject GenericDAO dao;
+	
+	private Pedido pedido;
+	private ItemCardapio item;
+		
+
+	public ItemCardapio getItem() {
+		return item;
+	}
+
+	public void setItem(ItemCardapio item) {
+		this.item = item;
+	}
 
 	public CadastroPedidoMBean() {
-		
+		this.pedido = new Pedido();
 	}
 	
 	public Pedido getPedido() {
@@ -22,11 +40,17 @@ public class CadastroPedidoMBean {
 		this.pedido = pedido;
 	}
 	
-	public void addItem(ItemDeCardapio item) {
-		pedido.getItens().add(item);
+	public String addNewItem() {
+		dao.addNew(item);
+		//itemList = dao.findEmployees();
+		return "itens";
 	}
 	
-	public void removeItem(ItemDeCardapio item) {
-		pedido.getItens().remove(item);
+	public void addItem(ItemCardapio item) {
+		pedido.addItem(item);
+	}
+	
+	public void removeItem(ItemCardapio item) {
+		pedido.removeItem(item);
 	}
 }
