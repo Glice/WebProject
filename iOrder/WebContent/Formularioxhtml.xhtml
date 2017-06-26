@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://java.sun.com/jsf/html"> 
 
 <h:head>Pedido</h:head> 
 <h:body> 
@@ -15,6 +16,12 @@
 			<h:inputText value="#{orderController.item.id}"/>
 			
 			<h:selectBooleanCheckbox value="#{orderController.item.id}">Checkbox Item</h:selectBooleanCheckbox>
+			
+			<p:selectManyCheckbox id="checkboxTest" value="#{orderController.itensSelecionados}">
+
+    			<f:selectItems value="#{orderController.itemList}" var="item" itemLabel="#{item.nome}" itemValue="#{elem.id}" />
+
+			</p:selectManyCheckbox>
 			
 	</h:panelGrid>
 		 <br />

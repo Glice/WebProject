@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.ufrn.dao.GenericDAO;
+import br.com.ufrn.dao.ItemCardapioDAO;
 import br.com.ufrn.dominio.ItemCardapio;
 import br.com.ufrn.dominio.Pedido;
 
@@ -21,7 +22,10 @@ public class CadastroPedidoMBean {
 	
 	private Pedido pedido = new Pedido();
 	private ItemCardapio item = new ItemCardapio();
+	// Itens que na tela de seleção
 	private List<ItemCardapio> itemList = new ArrayList<>();
+	
+	private List<ItemCardapio> itensSelecionados = new ArrayList<>();
 		
 
 	public CadastroPedidoMBean() {
@@ -46,11 +50,11 @@ public class CadastroPedidoMBean {
 		this.pedido = pedido;
 	}
 	
-	public String addNewItem() {
-		dao.addNew(item);
-		//itemList = dao.findEmployees();
-		return "itens";
-	}
+//	public String addNewItem() {
+//		dao.addNew(item);
+//		//itemList = dao.findEmployees();
+//		return "itens";
+//	}
 	
 	public void addItem(ItemCardapio item) {
 		pedido.addItem(item);
@@ -59,4 +63,22 @@ public class CadastroPedidoMBean {
 	public void removeItem(ItemCardapio item) {
 		pedido.removeItem(item);
 	}
+	
+	public void listarItens(){
+		ItemCardapioDAO itemDAO = new ItemCardapioDAO();
+		try {
+			this.itemList = itemDAO.findAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public String confirmarSelecao(){
+		for (ItemCardapio item : itensSelecionados) {
+			dao.addNew(item);	
+		}
+		
+		return "URL_de_confirmacao";
+	}
+	
 }
