@@ -1,6 +1,7 @@
 package br.com.ufrn.dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -38,6 +39,7 @@ public class Pedido implements Serializable {
 		this.cliente = new Cliente();
 		this.cliente.setNome("Cliente não identificado");
 		//this.mesa = mesa;
+		this.itens = new ArrayList<ItemCardapio>();
 	}
 
 	public double totalPedido() {

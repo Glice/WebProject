@@ -70,24 +70,28 @@
 				
 				<p>Itens do <strong>cardápio</strong>:</p>
 				<br/>
-				<!-- <h:selectManyCheckbox value="#{orderController.item.id}">Item</h:selectManyCheckbox>
-				
 				<input type="checkbox" name="item" id="2" value="1"/>1<br/>
 				<input type="checkbox" name="item" id="3" value="2"/>2<br/>
 				<input type="checkbox" name="item" id="4" value="3"/>3<br/>
 				<input type="checkbox" name="item" id="5" value="4"/>4<br/>
-				<input type="checkbox" name="item" id="6" value="5"/>5<br/> -->
+				<input type="checkbox" name="item" id="6" value="5"/>5<br/>
 				
-				<!-- itensSelecionados = os itens q o usuário vai escolher.
+				<!-- add itens -->
+				<h:inputText value="#{orderController.item.nome}" />
+				<h:inputText value="#{orderController.item.valor}" />
+				<br></br>
+				<h:commandButton action="#{orderController.addItem()}" value="Add item" />
+				
+				<!-- orderController.pedido.itens = os itens q o usuário vai escolher.
 				 itemList = itens que estarão à disposição do usuário. -->
-				<p:selectManyCheckbox id="checkboxTest" value="#{orderController.pedido.itens}">
+				<p:selectManyCheckbox id="checkboxTest" value="#{orderController.itemList}">
 	
 	    			<f:selectItems value="#{orderController.itemList}" var="item" itemLabel="#{item.nome}" itemValue="#{elem.id}" />
-	
+					
 				</p:selectManyCheckbox>
 
 				<br/>
-				<input type="button" name="btnEnviar" value="Enviar" onclick="#{orderController.criarPedido}"/>
+				<!-- <input type="button" name="btnEnviar" value="Enviar" onclick="#{orderController.criarPedido()}"/> -->
 				<br/>
 				<br/>
 			</h:form>

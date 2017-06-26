@@ -33,6 +33,10 @@ public class CadastroPedidoMBean {
 		
 		this.item.setId(1);
 		this.item.setNome("item teste");
+		ItemCardapio elemento = new ItemCardapio();
+		this.itemList.add(item);
+		this.itemList.add(elemento);
+		this.itemList.add(item);
 	}
 
 	public ItemCardapio getItem() {
@@ -57,12 +61,15 @@ public class CadastroPedidoMBean {
 //		return "itens";
 //	}
 	
-	public void addItem(ItemCardapio item) {
-		pedido.addItem(item);
+	public void addItem() {
+		this.itemList.add(item);
+		pedido.addItem(this.item);
+		this.item = null;
 	}
 	
 	public void removeItem(ItemCardapio item) {
 		pedido.removeItem(item);
+		this.itemList.remove(item);
 	}
 	
 	public void listarItens(){
