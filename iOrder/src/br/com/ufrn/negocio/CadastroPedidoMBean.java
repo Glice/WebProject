@@ -20,12 +20,13 @@ public class CadastroPedidoMBean {
 	
 	@Inject GenericDAO dao;
 	
+	private final String PedidoForm = "Formulario.xhtml";
 	private Pedido pedido = new Pedido();
 	private ItemCardapio item = new ItemCardapio();
 	// Itens que na tela de seleção
 	private List<ItemCardapio> itemList = new ArrayList<>();
 	
-	private List<ItemCardapio> itensSelecionados = new ArrayList<>();
+//	private List<ItemCardapio> itensSelecionados = new ArrayList<>(); // necessário?
 		
 
 	public CadastroPedidoMBean() {
@@ -67,18 +68,30 @@ public class CadastroPedidoMBean {
 	public void listarItens(){
 		ItemCardapioDAO itemDAO = new ItemCardapioDAO();
 		try {
-			this.itemList = itemDAO.findAll();
+			this.setItemList(itemDAO.findAll());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public String confirmarSelecao(){
-		for (ItemCardapio item : itensSelecionados) {
+		for (ItemCardapio item : this.pedido.getItens()) {
 			dao.addNew(item);	
 		}
 		
 		return "URL_de_confirmacao";
+	}
+
+	public List<ItemCardapio> getItemList() {
+		return itemList;
+	}
+
+	public void setItemList(List<ItemCardapio> itemList) {
+		this.itemList = itemList;
+	}
+	
+	public String criarPedido(){
+		return PedidoForm;
 	}
 	
 }

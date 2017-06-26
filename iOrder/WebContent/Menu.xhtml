@@ -4,7 +4,8 @@
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+                   xmlns:p="http://java.sun.com/jsf/html">
       
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -69,16 +70,24 @@
 				
 				<p>Itens do <strong>cardápio</strong>:</p>
 				<br/>
-				<h:selectManyCheckbox value="#{orderController.item.id}">Item</h:selectManyCheckbox>
+				<!-- <h:selectManyCheckbox value="#{orderController.item.id}">Item</h:selectManyCheckbox>
 				
 				<input type="checkbox" name="item" id="2" value="1"/>1<br/>
 				<input type="checkbox" name="item" id="3" value="2"/>2<br/>
 				<input type="checkbox" name="item" id="4" value="3"/>3<br/>
 				<input type="checkbox" name="item" id="5" value="4"/>4<br/>
-				<input type="checkbox" name="item" id="6" value="5"/>5<br/>
+				<input type="checkbox" name="item" id="6" value="5"/>5<br/> -->
+				
+				<!-- itensSelecionados = os itens q o usuário vai escolher.
+				 itemList = itens que estarão à disposição do usuário. -->
+				<p:selectManyCheckbox id="checkboxTest" value="#{orderController.pedido.itens}">
+	
+	    			<f:selectItems value="#{orderController.itemList}" var="item" itemLabel="#{item.nome}" itemValue="#{elem.id}" />
+	
+				</p:selectManyCheckbox>
 
 				<br/>
-				<input type="button" name="btnEnviar" value="Enviar" onclick="criarPedido()"/>
+				<input type="button" name="btnEnviar" value="Enviar" onclick="#{orderController.criarPedido}"/>
 				<br/>
 				<br/>
 			</h:form>
